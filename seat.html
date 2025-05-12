@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор зоны | Праздник в каждый дом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Логотип компании">
+                <h1>Праздник в каждый дом</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="search.html">Поиск</a></li>
+                    <li><a href="#">Управление бронированием</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="seat-selection">
+        <div class="container">
+            <div class="location-info">
+                <h2>Детский центр "Радуга"</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <p><strong>Регион:</strong> Москва</p>
+                    </div>
+                    <div class="info-item">
+                        <p><strong>Адрес:</strong> ул. Праздничная, 15</p>
+                    </div>
+                    <div class="info-item">
+                        <p><strong>Дата:</strong> 15.06.2023</p>
+                    </div>
+                    <div class="info-item">
+                        <p><strong>Количество гостей:</strong> 12 (8 детей, 4 взрослых)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="seat-map">
+                <h2>Выберите зону</h2>
+                <p>Доступные зоны выделены зеленым цветом. Нажмите на зону для выбора.</p>
+                
+                <div class="map-container">
+                    <div class="seat available" data-price="5000">
+                        <span class="seat-number">1</span>
+                        <span class="seat-price">5000 ₽</span>
+                    </div>
+                    <div class="seat available" data-price="5000">
+                        <span class="seat-number">2</span>
+                        <span class="seat-price">5000 ₽</span>
+                    </div>
+                    <div class="seat booked">
+                        <span class="seat-number">3</span>
+                        <span class="seat-price">5000 ₽</span>
+                    </div>
+                    <div class="seat available" data-price="6000">
+                        <span class="seat-number">4</span>
+                        <span class="seat-price">6000 ₽</span>
+                    </div>
+                    <div class="seat booked">
+                        <span class="seat-number">5</span>
+                        <span class="seat-price">6000 ₽</span>
+                    </div>
+                    <div class="seat available" data-price="6000">
+                        <span class="seat-number">6</span>
+                        <span class="seat-price">6000 ₽</span>
+                    </div>
+                    <div class="seat available" data-price="4500">
+                        <span class="seat-number">7</span>
+                        <span class="seat-price">4500 ₽</span>
+                    </div>
+                    <div class="seat booked">
+                        <span class="seat-number">8</span>
+                        <span class="seat-price">4500 ₽</span>
+                    </div>
+                    <div class="seat available" data-price="7000">
+                        <span class="seat-number">9</span>
+                        <span class="seat-price">7000 ₽</span>
+                    </div>
+                    <div class="seat available" data-price="7000">
+                        <span class="seat-number">10</span>
+                        <span class="seat-price">7000 ₽</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total-section">
+                <h3>Итого к оплате:</h3>
+                <div class="total-price">0 ₽</div>
+                <a href="booking.html" class="btn" id="book-btn" disabled>Перейти к бронированию</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <a href="tel:88001112020" class="phone">8 (800) 111-20-20</a>
+                    <p>г. Москва, ул. Праздничная, д. 1</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="search.html">Поиск</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>О компании</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">Локации</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 "Праздник в каждый дом". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const seats = document.querySelectorAll('.seat.available');
+            const totalPriceElement = document.querySelector('.total-price');
+            const bookBtn = document.getElementById('book-btn');
+            let selectedSeat = null;
+            let totalPrice = 0;
+            
+            seats.forEach(seat => {
+                seat.addEventListener('click', function() {
+                    if (selectedSeat) {
+                        selectedSeat.classList.remove('selected');
+                    }
+                    
+                    this.classList.add('selected');
+                    selectedSeat = this;
+                    
+                    totalPrice = parseInt(this.getAttribute('data-price'));
+                    totalPriceElement.textContent = totalPrice.toLocaleString('ru-RU') + ' ₽';
+                    
+                    bookBtn.removeAttribute('disabled');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

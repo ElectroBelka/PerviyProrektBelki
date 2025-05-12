@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование | Праздник в каждый дом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Логотип компании">
+                <h1>Праздник в каждый дом</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="search.html">Поиск</a></li>
+                    <li><a href="#">Управление бронированием</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="order-info">
+                    <h2>Информация о заказе</h2>
+                    <div class="info-item">
+                        <p><strong>Локация:</strong> Детский центр "Радуга"</p>
+                    </div>
+                    <div class="info-item">
+                        <p><strong>Адрес:</strong> ул. Праздничная, 15</p>
+                    </div>
+                    <div class="info-item">
+                        <p><strong>Дата:</strong> 15.06.2023</p>
+                    </div>
+                    <div class="info-item">
+                        <p><strong>Количество гостей:</strong> 12 (8 детей, 4 взрослых)</p>
+                    </div>
+                    <div class="info-item">
+                        <p><strong>Выбранная зона:</strong> Зона №4</p>
+                    </div>
+                    <div class="info-item">
+                        <p><strong>Стоимость аренды:</strong> 6 000 ₽</p>
+                    </div>
+                </div>
+                
+                <div class="services-form">
+                    <h2>Дополнительные услуги</h2>
+                    
+                    <div class="service-item">
+                        <input type="checkbox" id="food" name="food" value="3000">
+                        <label for="food" class="service-label">Организация питания (+3 000 ₽)</label>
+                        <span class="service-price">3 000 ₽</span>
+                    </div>
+                    
+                    <div class="service-item">
+                        <input type="checkbox" id="animators" name="animators" value="5000">
+                        <label for="animators" class="service-label">Услуги аниматоров (+5 000 ₽)</label>
+                        <span class="service-price">5 000 ₽</span>
+                    </div>
+                    
+                    <div class="service-item">
+                        <input type="checkbox" id="host" name="host" value="4000">
+                        <label for="host" class="service-label">Услуги ведущего (+4 000 ₽)</label>
+                        <span class="service-price">4 000 ₽</span>
+                    </div>
+                    
+                    <div class="service-item">
+                        <input type="checkbox" id="taxi" name="taxi" value="2000">
+                        <label for="taxi" class="service-label">Услуги детского такси (+2 000 ₽)</label>
+                        <span class="service-price">2 000 ₽</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Дополнительные пожелания</label>
+                        <textarea id="comment" name="comment" placeholder="Ваши пожелания к организации праздника"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email для подтверждения бронирования</label>
+                        <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total-section">
+                <div class="total-line">
+                    <span>Стоимость аренды:</span>
+                    <span>6 000 ₽</span>
+                </div>
+                <div class="total-line">
+                    <span>Дополнительные услуги:</span>
+                    <span id="services-total">0 ₽</span>
+                </div>
+                <div class="total-price">
+                    <span>Итого к оплате:</span>
+                    <span id="final-total">6 000 ₽</span>
+                </div>
+                <button type="submit" class="btn">Забронировать</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <a href="tel:88001112020" class="phone">8 (800) 111-20-20</a>
+                    <p>г. Москва, ул. Праздничная, д. 1</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="search.html">Поиск</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>О компании</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">Локации</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 "Праздник в каждый дом". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const servicesTotalElement = document.getElementById('services-total');
+            const finalTotalElement = document.getElementById('final-total');
+            const basePrice = 6000;
+            let servicesTotal = 0;
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        servicesTotal += parseInt(this.value);
+                    } else {
+                        servicesTotal -= parseInt(this.value);
+                    }
+                    
+                    servicesTotalElement.textContent = servicesTotal.toLocaleString('ru-RU') + ' ₽';
+                    finalTotalElement.textContent = (basePrice + servicesTotal).toLocaleString('ru-RU') + ' ₽';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

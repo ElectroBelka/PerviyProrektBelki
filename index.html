@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Праздник в каждый дом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Логотип компании">
+                <h1>Праздник в каждый дом</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="search.html">Поиск</a></li>
+                    <li><a href="#">Управление бронированием</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="fade-in">Подарим волшебство для Ваших детей!</h2>
+            <p class="fade-in delay-1">Организация незабываемых праздников для детей и их родителей</p>
+            <a href="#search" class="btn fade-in delay-2">Забронировать сейчас</a>
+        </div>
+    </section>
+
+    <!-- Секция алгоритма бронирования -->
+    <section class="booking-steps">
+        <div class="container">
+            <h2>Как забронировать праздник</h2>
+            <p>Всего несколько простых шагов до незабываемого праздника для вашего ребенка</p>
+            
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-icon">1</div>
+                    <h3>Выберите дату</h3>
+                    <p>Укажите желаемую дату проведения праздника</p>
+                </div>
+                <div class="step fade-in delay-1">
+                    <div class="step-icon">2</div>
+                    <h3>Количество гостей</h3>
+                    <p>Укажите количество детей и взрослых</p>
+                </div>
+                <div class="step fade-in delay-2">
+                    <div class="step-icon">3</div>
+                    <h3>Выберите локацию</h3>
+                    <p>Подберите подходящую площадку для праздника</p>
+                </div>
+                <div class="step fade-in delay-3">
+                    <div class="step-icon">4</div>
+                    <h3>Забронируйте</h3>
+                    <p>Оформите бронирование и дополнительные услуги</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция о компании -->
+    <section class="about">
+        <div class="container">
+            <h2>О нашей компании</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Наша цель</h3>
+                    <p>Сделать праздничные дни незабываемыми для детей и их родителей. Мы организуем праздники, которые останутся в памяти на всю жизнь.</p>
+                    
+                    <h3>Наш девиз</h3>
+                    <p>"Подарим волшебство для Ваших детей!" - это не просто слова, это наше обещание каждому клиенту.</p>
+                    
+                    <div class="testimonials">
+                        <h3>Отзывы наших клиентов</h3>
+                        <div class="testimonial fade-in">
+                            <p>"Организация дня рождения дочки превзошла все ожидания! Дети были в восторге, а мы смогли просто наслаждаться праздником."</p>
+                            <div class="testimonial-author">- Марина, мама Софии (8 лет)</div>
+                        </div>
+                        <div class="testimonial fade-in delay-1">
+                            <p>"Спасибо за прекрасный выпускной в детском саду! Все было продумано до мелочей, аниматоры - настоящие профессионалы."</p>
+                            <div class="testimonial-author">- Ольга, мама Максима (6 лет)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in delay-2">
+                    <img src="images/Happy1.jpg" alt="Детский праздник">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма поиска -->
+    <section class="search-form" id="search">
+        <div class="container">
+            <h2>Найдите идеальную площадку для праздника</h2>
+            
+            <form action="search.html" method="GET">
+                <div class="form-group">
+                    <div class="form-control">
+                        <label for="region">Регион</label>
+                        <select id="region" name="region" required>
+                            <option value="">Выберите регион</option>
+                            <option value="moscow">Москва</option>
+                            <option value="spb">Санкт-Петербург</option>
+                            <option value="kazan">Казань</option>
+                            <option value="ekb">Екатеринбург</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="date">Дата мероприятия</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="adults">Количество взрослых</label>
+                        <input type="number" id="adults" name="adults" min="1" max="50" value="2" required>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="children">Количество детей</label>
+                        <input type="number" id="children" name="children" min="1" max="50" value="10" required>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn">Найти локации</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Секция акций -->
+    <section class="promotions">
+        <div class="container">
+            <h2>Наши акции</h2>
+            <p>Специальные предложения для наших клиентов</p>
+            
+            <div class="promotions-grid">
+                <div class="promotion-card fade-in">
+                    <div class="promotion-image">
+                        <img src="images/Sale1.jpg" alt="Акция 1">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Скидка 20% в будние дни</h3>
+                        <p>Забронируйте праздник с пятницы по воскресенье и получите скидку 20% на аренду локации.</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="promotion-card fade-in delay-1">
+                    <div class="promotion-image">
+                        <img src="images/Anim1.jpg" alt="Акция 2">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Бесплатный аниматор</h3>
+                        <p>При заказе праздника на 10 и более детей - услуги аниматора в подарок!</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="promotion-card fade-in delay-2">
+                    <div class="promotion-image">
+                        <img src="images/Sale2.jpg" alt="Акция 3">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Семейный пакет</h3>
+                        <p>Специальное предложение для семей с тремя и более детьми - скидка 15% на все услуги.</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма подписки -->
+    <section class="subscribe">
+        <div class="container">
+            <h2>Подпишитесь на закрытые акции</h2>
+            <p>Получайте эксклюзивные предложения и скидки первыми</p>
+            
+            <form class="subscribe-form fade-in">
+                <input type="email" placeholder="Ваш email" required>
+                <button type="submit" class="btn">Подписаться</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <a href="tel:88001112020" class="phone">8 (800) 111-20-20</a>
+                    <p>г. Москва, ул. Праздничная, д. 1</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="search.html">Поиск</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>О компании</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">Локации</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 "Праздник в каждый дом". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
